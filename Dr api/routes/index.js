@@ -8,6 +8,7 @@ const corsOptions ={
     optionSuccessStatus:200
 }
 router.use(cors(corsOptions));
+
 router.post('/register',Register);
 router.post('/login',Login);                
 

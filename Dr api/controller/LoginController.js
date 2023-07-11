@@ -25,13 +25,20 @@ const Login = async (req,res) => {
     
     try {
         
-        // var data = await loginmodel.find({email:req.body.email});
-        var data = await loginmodel.find({name:req.body.name});
+        var data = await loginmodel.find({email:req.body.email});
+        // var data = await loginmodel.find({name:req.body.name});
 
         if(data[0].password == req.body.password)
         {
             res.status(200).json({
                 status:"Login Success",
+                data
+            })
+        }
+        else
+        {
+            res.status(200).json({
+                status:"Password not match",
                 data
             })
         }
